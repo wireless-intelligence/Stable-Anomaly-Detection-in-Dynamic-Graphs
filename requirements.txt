@@ -1,0 +1,30 @@
+# SAG cloud requirements — RTX 5090 (sm_120) needs CUDA 12.8+ and torch 2.7+.
+# Install torch FIRST with the CUDA-matched wheel below; THEN install the rest.
+#
+#   # for cu128 (recommended for 5090):
+#   pip install torch==2.7.0 --index-url https://download.pytorch.org/whl/cu128
+#   # alternative: cu124 (works for 4090/A100/H100; NOT for 5090):
+#   # pip install torch==2.4.0 --index-url https://download.pytorch.org/whl/cu124
+#
+# Then:
+#   pip install -r requirements.txt
+
+# Core SAG (pure NumPy) deps
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-learn>=1.2.0
+pandas>=2.0.0
+networkx>=3.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
+tqdm>=4.65.0
+psutil>=5.9.0
+
+# PyG / pygod baselines (require torch already installed above)
+torch_geometric>=2.5.0
+pygod>=1.1.0
+pyod>=2.0.0
+
+# Optional sampler deps for some pygod detectors (CUDA-matched wheel index):
+#   pip install pyg_lib torch_sparse \
+#     -f https://data.pyg.org/whl/torch-2.7.0+cu128.html

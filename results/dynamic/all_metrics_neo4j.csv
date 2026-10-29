@@ -1,0 +1,7 @@
+dataset,method,paradigm,auroc_mean,auprc_mean,auprc_bal_mean,macro_f1_mean,macro_f1_bal_mean,query_latency_ms_mean,query_latency_ms_std,per_edge_ms_mean,memory_gb_mean
+AMLSim,SAG,sag,0.9985,0.9676,0.9964,0.9616,0.9957,5399.0501,58.8138,0.1986,2.359
+AMLSim,JODIE,dynamic,0.9785,0.9317,0.9867,0.9405,0.9646,21913.7047,223.5648,0.8062,2.3608
+AMLSim,MIDAS,streaming,0.7162,0.4895,0.7508,0.7862,0.7033,44.7387,5.2121,0.0016,2.3614
+Bitcoin-Alpha,SAG,sag,0.6555,0.0688,0.5928,0.5097,0.6527,4801.7612,225.5697,0.1985,2.3631
+Bitcoin-Alpha,JODIE,dynamic,0.462,0.042,0.4426,0.4871,0.507,12479.0735,1263.2517,0.516,2.3649
+Bitcoin-Alpha,MIDAS,streaming,0.5542,0.0698,0.5459,0.5502,0.4671,37.4316,0.2786,0.0015,2.3649

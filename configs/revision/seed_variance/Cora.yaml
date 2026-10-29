@@ -1,0 +1,20 @@
+dataset: Cora
+axes:
+  - stream_order
+  - anomaly_injection
+  - split
+  - threshold
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+base_seed: 42
+notes:
+  ground_truth: false
+  anomaly_injection_applicable: true
+  anomaly_injection:
+    injector: src.data.anomaly_injection.AnomalyInjector
+    clique_size: 15
+    num_cliques: 5
+    k_attr: 50
+  split_applicable: false
+  split_skip_reason: >
+    SAG is unsupervised: scores are produced from a single streaming pass over
+    all edges; there is no train/val/test split to seed.

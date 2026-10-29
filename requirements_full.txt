@@ -1,0 +1,56 @@
+# Unified requirements for SAG + ALL baselines.
+# Single conda env, no per-baseline isolation.
+#
+# Install order (5090 / cu128):
+#   1. conda create -n sag python=3.10 -y && conda activate sag
+#   2. pip install torch==2.7.1 torchvision==0.22.1 \
+#          --index-url https://download.pytorch.org/whl/cu128
+#   3. pip install -r requirements_full.txt
+#   4. (optional, for some PyG samplers) \
+#      pip install pyg_lib torch_sparse torch_scatter \
+#        -f https://data.pyg.org/whl/torch-2.7.1+cu128.html
+
+# === Core SAG ===
+numpy>=1.24.0
+scipy>=1.11.0
+scikit-learn>=1.3.0
+pandas>=2.0.0
+networkx>=3.1
+matplotlib>=3.7.0
+seaborn>=0.12.0
+tqdm>=4.65.0
+psutil>=5.9.0
+
+# === GNN frameworks ===
+torch_geometric>=2.5.0
+dgl>=2.0.0                         # ConsisGAD, ANEMONE prefer DGL
+ogb>=1.3.6
+
+# === pygod baselines (DOMINANT/CoLA/CONAD/AnomalyDAE/GUIDE/GAE/GAAN/etc.) ===
+pygod>=1.1.0
+pyod>=2.0.0
+
+# === Streaming/dynamic baselines ===
+scikit-network>=0.30.0             # SedanSpot, NetWalk graph utils
+torch-geometric-temporal>=0.54.0   # official EvolveGCN (EvolveGCNO); optional
+# Official TGN/JODIE/DyRep/TGAT: cloned via setup_vendor_baselines.sh -> vendor/DyGLib
+
+# === LLM-based baselines (GraphGPT/TAPE/HiGPT/InstructGLM/Qwen-finetune) ===
+transformers>=4.45.0               # LLaMA-2 / Qwen3 model loading
+accelerate>=0.34.0                 # multi-GPU sharding for 7B+ models
+sentencepiece>=0.2.0               # LLaMA / Qwen tokenizer
+bitsandbytes>=0.43.0               # 4-bit / 8-bit quantization
+peft>=0.12.0                       # LoRA finetune for InstructGLM
+einops>=0.7.0                      # GraphGPT positional encodings
+safetensors>=0.4.0                 # model weight loading
+
+# Optional: TAPE GPT explanations (only if you have an OpenAI key)
+# openai>=1.0.0
+# tiktoken
+
+# === Database / streaming experiments ===
+neo4j>=5.0.0                       # for the Neo4j benchmark experiments
+
+# === Misc utilities ===
+pyyaml>=6.0
+filelock>=3.13.0

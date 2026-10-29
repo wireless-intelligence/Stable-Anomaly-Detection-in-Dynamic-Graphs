@@ -1,0 +1,41 @@
+datasets: [YelpReviews, Enron, Cora, BlogCatalog]
+seeds: [0, 1, 2]
+base_seed: 42
+params:
+  alpha:
+    cfg_field: alpha
+    values: [0.25, 0.5, 1.0, 2.0, 4.0]
+    role: "tanh saturation in state update"
+  gamma:
+    cfg_field: gamma
+    values: [0.80, 0.90, 0.95, 0.98, 0.99]
+    role: "decay base"
+  R:
+    cfg_field: kernel_dim
+    values: [1, 2, 4, 8, 16]
+    role: "multi-scale decay basis size"
+  delta:
+    cfg_field: delta
+    values: [0.1, 0.5, 1.0, 2.0]
+    role: "exposure-scaling offset"
+  rho:
+    cfg_field: rho
+    values: [1.0, 2.0, 3.0, 4.0]
+    role: "frequency deviation threshold"
+  P_A:
+    cfg_field: prior_anomaly_rate
+    values: [0.01, 0.05, 0.10, 0.20]
+    role: "prior P(A) (Bayesian calibration)"
+  P_a_given_A:
+    cfg_field: likelihood_anomaly
+    values: [0.7, 0.8, 0.9]
+    role: "likelihood P(a | A)"
+  P_a_given_not_A:
+    cfg_field: likelihood_normal
+    values: [0.05, 0.10, 0.20]
+    role: "likelihood P(a | ~A)"
+  beta_upd:
+    cfg_field: beta_upd
+    values: [0.25, 0.5, 1.0, 2.0]
+    role: "state-update step size"
+metrics: [auroc, auprc, macro_f1, auprc_bal, macro_f1_bal, latency_us_per_edge, peak_mem_gb]

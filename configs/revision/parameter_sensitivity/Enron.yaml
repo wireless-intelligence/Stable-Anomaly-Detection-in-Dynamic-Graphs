@@ -1,0 +1,16 @@
+dataset: Enron
+seeds: [0, 1, 2]
+base_seed: 42
+params:
+  alpha:           [0.25, 0.5, 1.0, 2.0, 4.0]
+  gamma:           [0.80, 0.90, 0.95, 0.98, 0.99]
+  R:               [1, 2, 4, 8, 16]
+  delta:           [0.1, 0.5, 1.0, 2.0]
+  rho:             [1.0, 2.0, 3.0, 4.0]
+  P_A:             [0.01, 0.05, 0.10, 0.20]
+  P_a_given_A:     [0.7, 0.8, 0.9]
+  P_a_given_not_A: [0.05, 0.10, 0.20]
+  beta_upd:        [0.25, 0.5, 1.0, 2.0]
+notes:
+  ground_truth: true
+  native_fusion_mode: attr_only

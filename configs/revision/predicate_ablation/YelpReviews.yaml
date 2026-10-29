@@ -1,0 +1,15 @@
+dataset: YelpReviews
+seeds: [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+base_seed: 42
+variants:
+  full:                  {fusion_mode: auto, ablation: null}
+  edge_only:             {fusion_mode: h_only, ablation: null}
+  structural_only:       {fusion_mode: struct_only, ablation: null}
+  attribute_only:        {fusion_mode: attr_only, ablation: null}
+  no_attribute:          {fusion_mode: auto, ablation: no_attribute}
+  no_exposure:           {fusion_mode: null, ablation: no_exposure}
+  no_evidence_selection: {fusion_mode: no_evidence_selection, ablation: null}
+notes:
+  ground_truth: true
+  native_fusion_mode: iforest_only
+  attribute_path: iforest + pca-mahal

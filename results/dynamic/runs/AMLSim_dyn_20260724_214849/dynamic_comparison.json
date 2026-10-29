@@ -1,0 +1,306 @@
+{
+  "dataset": "AMLSim",
+  "stats": {
+    "dataset": "AMLSim",
+    "num_nodes": 1200,
+    "num_edges": 27180,
+    "num_unique_edges": 23817,
+    "num_features": 8,
+    "num_anomalies": 64,
+    "num_eval_nodes": 1200,
+    "anomaly_ratio": 0.05333333333333334,
+    "time_span": [
+      1.0,
+      27180.0
+    ],
+    "synthetic_labels": false,
+    "meta": {
+      "n_sar": 64,
+      "time_unit": "step/epoch"
+    }
+  },
+  "n_runs": 1,
+  "results": {
+    "SAG": {
+      "auroc": {
+        "values": [
+          0.9984938930457746
+        ],
+        "mean": 0.9984938930457746,
+        "std": 0.0
+      },
+      "auprc": {
+        "values": [
+          0.9676394394238284
+        ],
+        "mean": 0.9676394394238284,
+        "std": 0.0
+      },
+      "auprc_bal": {
+        "values": [
+          0.9964414110223047
+        ],
+        "mean": 0.9964414110223047,
+        "std": 0.0
+      },
+      "macro_f1": {
+        "values": [
+          0.9615576826971131
+        ],
+        "mean": 0.9615576826971131,
+        "std": 0.0
+      },
+      "macro_f1_bal": {
+        "values": [
+          0.995702576533926
+        ],
+        "mean": 0.995702576533926,
+        "std": 0.0
+      },
+      "latency_us": {
+        "mean": 150.58783859540821,
+        "std": 0.0
+      },
+      "memory_gb": {
+        "mean": 1.8216357231140137,
+        "std": 0.0
+      },
+      "paradigm": "sag"
+    },
+    "TGN": {
+      "auroc": {
+        "values": [
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "auprc": {
+        "values": [
+          0.02757034987947926
+        ],
+        "mean": 0.02757034987947926,
+        "std": 0.0
+      },
+      "auprc_bal": {
+        "values": [
+          0.31074381111659666
+        ],
+        "mean": 0.31074381111659666,
+        "std": 0.0
+      },
+      "macro_f1": {
+        "values": [
+          0.4860813704496788
+        ],
+        "mean": 0.4860813704496788,
+        "std": 0.0
+      },
+      "macro_f1_bal": {
+        "values": [
+          0.33333333333333326
+        ],
+        "mean": 0.33333333333333326,
+        "std": 0.0
+      },
+      "latency_us": {
+        "mean": 893.0069656879522,
+        "std": 0.0
+      },
+      "memory_gb": {
+        "mean": 1.9586257934570312,
+        "std": 0.0
+      },
+      "paradigm": "dynamic"
+    },
+    "JODIE": {
+      "error": "RuntimeError: JODIE (DyGLib) failed rc=1. requires vendor/DyGLib/ (clone of https://github.com/yule-BUAA/DyGLib) plus torch + torch_geometric. Run setup_vendor_baselines.sh.\nSTDOUT:\n\nSTDERR:\nTraceback (most recent call last):\n  File \"/tmp/sag_dyglib_wnaiegz_/_runner.py\", line 128, in <module>\n    run_epoch(train_data, train_ns, train=True)\n  File \"/tmp/sag_dyglib_wnaiegz_/_runner.py\", line 96, in run_epoch\n    model[0].set_neighbor_sampler(ns)\n  File \"/root/autodl-tmp/SAG_cloud/vendor/DyGLib/models/MemoryModel.py\", line 259, in set_neighbor_sampler\n    assert self.model_name in ['TGN', 'DyRep'], f'Neighbor sampler is not defined in model {self.model_name}!'\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nAssertionError: Neighbor sampler is not defined in model JODIE!\n",
+      "paradigm": "dynamic"
+    },
+    "DyRep": {
+      "auroc": {
+        "values": [
+          0.0
+        ],
+        "mean": 0.0,
+        "std": 0.0
+      },
+      "auprc": {
+        "values": [
+          0.02757034987947926
+        ],
+        "mean": 0.02757034987947926,
+        "std": 0.0
+      },
+      "auprc_bal": {
+        "values": [
+          0.31074381111659666
+        ],
+        "mean": 0.31074381111659666,
+        "std": 0.0
+      },
+      "macro_f1": {
+        "values": [
+          0.4860813704496788
+        ],
+        "mean": 0.4860813704496788,
+        "std": 0.0
+      },
+      "macro_f1_bal": {
+        "values": [
+          0.33333333333333326
+        ],
+        "mean": 0.33333333333333326,
+        "std": 0.0
+      },
+      "latency_us": {
+        "mean": 926.8987061753265,
+        "std": 0.0
+      },
+      "memory_gb": {
+        "mean": 1.9586257934570312,
+        "std": 0.0
+      },
+      "paradigm": "dynamic"
+    },
+    "TGAT": {
+      "auroc": {
+        "values": [
+          0.5545637103873239
+        ],
+        "mean": 0.5545637103873239,
+        "std": 0.0
+      },
+      "auprc": {
+        "values": [
+          0.22803633787312574
+        ],
+        "mean": 0.22803633787312574,
+        "std": 0.0
+      },
+      "auprc_bal": {
+        "values": [
+          0.6624255618467215
+        ],
+        "mean": 0.6624255618467215,
+        "std": 0.0
+      },
+      "macro_f1": {
+        "values": [
+          0.6358583680705285
+        ],
+        "mean": 0.6358583680705285,
+        "std": 0.0
+      },
+      "macro_f1_bal": {
+        "values": [
+          0.5937963783014417
+        ],
+        "mean": 0.5937963783014417,
+        "std": 0.0
+      },
+      "latency_us": {
+        "mean": 558.5748112929754,
+        "std": 0.0
+      },
+      "memory_gb": {
+        "mean": 1.9586906433105469,
+        "std": 0.0
+      },
+      "paradigm": "dynamic"
+    },
+    "EvolveGCN-reimpl": {
+      "auroc": {
+        "values": [
+          0.9305127640845071
+        ],
+        "mean": 0.9305127640845071,
+        "std": 0.0
+      },
+      "auprc": {
+        "values": [
+          0.7154630285136863
+        ],
+        "mean": 0.7154630285136863,
+        "std": 0.0
+      },
+      "auprc_bal": {
+        "values": [
+          0.9342175150191746
+        ],
+        "mean": 0.9342175150191746,
+        "std": 0.0
+      },
+      "macro_f1": {
+        "values": [
+          0.8793889037791477
+        ],
+        "mean": 0.8793889037791477,
+        "std": 0.0
+      },
+      "macro_f1_bal": {
+        "values": [
+          0.8272355070846172
+        ],
+        "mean": 0.8272355070846172,
+        "std": 0.0
+      },
+      "latency_us": {
+        "mean": 18.18862311251467,
+        "std": 0.0
+      },
+      "memory_gb": {
+        "mean": 2.0890564918518066,
+        "std": 0.0
+      },
+      "paradigm": "dynamic"
+    },
+    "MIDAS": {
+      "auroc": {
+        "values": [
+          0.7167074713908451
+        ],
+        "mean": 0.7167074713908451,
+        "std": 0.0
+      },
+      "auprc": {
+        "values": [
+          0.4888224982368252
+        ],
+        "mean": 0.4888224982368252,
+        "std": 0.0
+      },
+      "auprc_bal": {
+        "values": [
+          0.7515789744117833
+        ],
+        "mean": 0.7515789744117833,
+        "std": 0.0
+      },
+      "macro_f1": {
+        "values": [
+          0.7785610156668081
+        ],
+        "mean": 0.7785610156668081,
+        "std": 0.0
+      },
+      "macro_f1_bal": {
+        "values": [
+          0.7022125972951673
+        ],
+        "mean": 0.7022125972951673,
+        "std": 0.0
+      },
+      "latency_us": {
+        "mean": 1.5148976605284117,
+        "std": 0.0
+      },
+      "memory_gb": {
+        "mean": 2.0813446044921875,
+        "std": 0.0
+      },
+      "paradigm": "streaming"
+    }
+  },
+  "timestamp": "20260724_214849"
+}

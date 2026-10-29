@@ -1,0 +1,72 @@
+{
+  "dataset": "AMLSim",
+  "stats": {
+    "dataset": "AMLSim",
+    "num_nodes": 1200,
+    "num_edges": 27180,
+    "num_unique_edges": 23817,
+    "num_features": 8,
+    "num_anomalies": 64,
+    "num_eval_nodes": 1200,
+    "anomaly_ratio": 0.05333333333333334,
+    "time_span": [
+      1.0,
+      27180.0
+    ],
+    "synthetic_labels": false,
+    "meta": {
+      "n_sar": 64,
+      "time_unit": "step/epoch"
+    }
+  },
+  "n_runs": 1,
+  "results": {
+    "JODIE": {
+      "auroc": {
+        "values": [
+          0.9862593529929577
+        ],
+        "mean": 0.9862593529929577,
+        "std": 0.0
+      },
+      "auprc": {
+        "values": [
+          0.9805610925945529
+        ],
+        "mean": 0.9805610925945529,
+        "std": 0.0
+      },
+      "auprc_bal": {
+        "values": [
+          0.9924492893999737
+        ],
+        "mean": 0.9924492893999737,
+        "std": 0.0
+      },
+      "macro_f1": {
+        "values": [
+          0.9792150926140831
+        ],
+        "mean": 0.9792150926140831,
+        "std": 0.0
+      },
+      "macro_f1_bal": {
+        "values": [
+          0.9859365461626666
+        ],
+        "mean": 0.9859365461626666,
+        "std": 0.0
+      },
+      "latency_us": {
+        "mean": 791.5316774585915,
+        "std": 0.0
+      },
+      "memory_gb": {
+        "mean": 1.7944717407226562,
+        "std": 0.0
+      },
+      "paradigm": "dynamic"
+    }
+  },
+  "timestamp": "20260724_215235"
+}

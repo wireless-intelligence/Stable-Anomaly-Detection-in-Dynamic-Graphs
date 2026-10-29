@@ -1,0 +1,235 @@
+DATASET_CONFIGS = {
+    "BlogCatalog": {
+        "num_epochs": 30,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "clique_size": 15,
+        "num_cliques": 10,
+        "has_ground_truth": False,
+        "attr_mode": "gcn",
+        "fusion_mode": "attr_only",
+        "use_trained_ae": True,
+        "use_attr_boost": False,
+        "trained_ae_cfg": {'hidden_dim': 64, 'epochs': 100, 'alpha': 0.7, 'edge_weight': 5.0},
+    },
+    "Flickr": {
+        "num_epochs": 20,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "clique_size": 15,
+        "num_cliques": 15,
+        "has_ground_truth": False,
+        "attr_mode": "gcn",
+        "use_trained_ae": True,
+        "trained_ae_cfg": {'hidden_dim': 64, 'epochs': 100, 'alpha': 0.7, 'edge_weight': 5.0},
+    },
+    "ACM": {
+        "num_epochs": 20,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "clique_size": 15,
+        "num_cliques": 20,
+        "has_ground_truth": False,
+        "attr_mode": "gcn",
+        "use_trained_ae": True,
+        "trained_ae_cfg": {'hidden_dim': 64, 'epochs': 80, 'alpha': 0.7, 'edge_weight': 10.0},
+    },
+    "Cora": {
+        "num_epochs": 30,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "clique_size": 15,
+        "num_cliques": 5,
+        "has_ground_truth": False,
+        "attr_mode": "gcn",
+        "use_trained_ae": True,
+        "use_attr_boost": True,
+        "use_pca_mahal": True,
+        "trained_ae_cfg": {'hidden_dim': 32, 'epochs': 200, 'alpha': 0.8, 'edge_weight': 40.0},
+    },
+    "Citeseer": {
+        "num_epochs": 30,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "clique_size": 15,
+        "num_cliques": 5,
+        "has_ground_truth": False,
+        "attr_mode": "gcn",
+        "fusion_mode": "auto",
+        "use_trained_ae": True,
+        "use_attr_boost": True,
+        "use_pca_mahal": True,
+        "trained_ae_cfg": {'hidden_dim': 64, 'epochs': 100, 'alpha': 0.7, 'edge_weight': 5.0},
+    },
+    "Pubmed": {
+        "num_epochs": 20,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "clique_size": 15,
+        "num_cliques": 20,
+        "has_ground_truth": False,
+        "attr_mode": "gcn",
+        "use_trained_ae": True,
+        "use_attr_boost": True,
+        "trained_ae_cfg": {'hidden_dim': 64, 'epochs': 100, 'alpha': 0.7, 'edge_weight': 5.0},
+    },
+    "Amazon": {
+        "num_epochs": 15,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "has_ground_truth": True,
+        "edge_order": "multi_relation",
+        "attr_mode": "iforest",
+        "fusion_mode": "iforest_only",
+    },
+    "YelpChi": {
+        "num_epochs": 12,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "has_ground_truth": True,
+    },
+    "YelpReviews": {
+        "num_epochs": 12,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "has_ground_truth": True,
+        "attr_mode": "iforest",
+        "fusion_mode": "iforest_only",
+        "use_pca_mahal": True,
+        "pm_blend_weight": 0.7,
+    },
+    "Enron": {
+        "num_epochs": 20,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "has_ground_truth": True,
+        "attr_mode": "gcn",
+        "fusion_mode": "attr_only",
+    },
+    "CTU-13": {
+        "num_epochs": 10,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "has_ground_truth": True,
+        "edge_order": "temporal",
+        "attr_mode": "iforest",
+        "fusion_mode": "iforest_only",
+    },
+    "Arxiv": {
+        "num_epochs": 10,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "clique_size": 15,
+        "num_cliques": 60,
+        "has_ground_truth": False,
+    },
+
+    # ------------------------------------------------------------------ #
+    # Real dynamic graphs: genuine per-edge timestamps + native labels.
+    # Streamed strictly once in time order via run_dynamic_comparison.py.
+    # `dyn_epochs` = training passes for temporal-GNN baselines (TGN/JODIE).
+    # ------------------------------------------------------------------ #
+    "DGraphFin": {
+        "num_epochs": 1,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "kernel_dim": 4,
+        "has_ground_truth": True,
+        "temporal": True,
+        "edge_order": "temporal",
+        "attr_mode": "iforest",
+        "fusion_mode": "auto",
+        "use_continuous_dev": True,
+        "dyn_epochs": 1,
+    },
+    "Elliptic-tx": {
+        "num_epochs": 1,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "kernel_dim": 4,
+        "has_ground_truth": True,
+        "temporal": True,
+        "edge_order": "temporal",
+        "attr_mode": "auto",
+        "fusion_mode": "auto",
+        "use_continuous_dev": True,
+        "dyn_epochs": 2,
+        "dyn_num_neighbors": 10,
+    },
+    "Elliptic-wallet": {
+        "num_epochs": 1,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "kernel_dim": 4,
+        "has_ground_truth": True,
+        "temporal": True,
+        "edge_order": "temporal",
+        "attr_mode": "auto",
+        "fusion_mode": "auto",
+        "use_continuous_dev": True,
+        "dyn_epochs": 5,
+    },
+    "AMLSim": {
+        "num_epochs": 1,
+        "alpha": 1.0,
+        "gamma": 0.95,
+        "rho": 2.0,
+        "kernel_dim": 4,
+        "has_ground_truth": True,
+        "temporal": True,
+        "edge_order": "temporal",
+        "attr_mode": "iforest",
+        "fusion_mode": "auto",
+        "use_continuous_dev": True,
+        "dyn_epochs": 3,
+    },
+}
+
+
+# Real dynamic-graph datasets (handled by TemporalDataLoader / run_dynamic_comparison.py).
+# Generic temporal edge-list datasets fall back to _DEFAULT_TEMPORAL_CONFIG.
+_DEFAULT_TEMPORAL_CONFIG = {
+    "num_epochs": 1,
+    "alpha": 1.0,
+    "gamma": 0.95,
+    "rho": 2.0,
+    "kernel_dim": 4,
+    "has_ground_truth": True,
+    "temporal": True,
+    "edge_order": "temporal",
+    "attr_mode": "auto",
+    "fusion_mode": "auto",
+    "use_continuous_dev": True,
+    "dyn_epochs": 2,
+    "dyn_num_neighbors": 10,   # DyGLib sampler is pure-Python; keep fan-out small
+}
+
+
+def get_dataset_config(name: str):
+    if name in DATASET_CONFIGS:
+        return DATASET_CONFIGS[name].copy()
+    # Real dynamic edge-list datasets (Bitcoin-Alpha/OTC, UCI, Email-DNC, ...)
+    try:
+        from src.data.temporal_datasets import is_temporal_dataset, canonical_name
+        if is_temporal_dataset(name):
+            cfg = _DEFAULT_TEMPORAL_CONFIG.copy()
+            cfg["_canonical"] = canonical_name(name)
+            return cfg
+    except Exception:
+        pass
+    raise ValueError(f"Unknown dataset: {name}")
